@@ -1,7 +1,46 @@
 {% extends 'layouts/base.html' %}
+{% load static%}
 {% block title %} portfolio herman{% endblock  %}
- {% include 'layouts/_navbar.html' %}
- {% block content %}
-             <p> herman</p>
- {% endblock content %}
-{% block footer %} {% include 'layouts/_footer.html'  %}  {% endblock  %}
+
+      {% block style %} 
+       
+     <link rel="stylesheet" href=" {% static 'css/style.css' %}" > 
+<link rel="stylesheet" href=" {% static 'cv/css/portfolio.css' %}">
+      {% endblock %} 
+{% include 'layouts/_navbar.html' %}
+{% block content %}
+<p> herman</p>
+
+{% for file in project %}
+<article>
+       <h1>{{file.title}}</h1>
+       <p>Dans le langage {{ file.langage}}</p>
+       <p> {{ file.description}}</p>
+</article>
+
+<div class="card">
+    <a href="#">
+
+        <div class="card-image">
+            <img src="{%  static file.image  %}" alt="#">
+        </div>
+        
+        <div class="card-body">
+            <div class="card-date">
+                <time> 3 octobre 2020</time>
+            </div>
+        </div>
+
+        <div class="card-title">
+            <h3>{{file.title}}</h3>
+        </div>
+
+        <div class="card-excerpt">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur tenetur quod minus, corrupti laudantium rem dolor temporibus incidunt qui,aiores esse quia labore?</p>
+        </div>
+    </a>
+</div>
+{% endfor%}
+{% endblock content %}
+{% block footer %} {% include 'layouts/_footer.html'  %} {% endblock  %}
+

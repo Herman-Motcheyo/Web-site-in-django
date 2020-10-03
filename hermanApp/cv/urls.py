@@ -5,5 +5,5 @@ app_name ='cv'
 
 urlpatterns = [
     path('',views.index ,name='index'),
-    path('/detail/<id>',views.detail,name='detail_project'),
+    path('detail/<id>',views.detail,name='detail_project'),
 ]
