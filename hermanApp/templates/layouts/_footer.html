@@ -1,0 +1,29 @@
+{% load static %}
+<div class="footer">
+    <div class="footer-item">
+        <div class="nav-item">
+            <h3>NAVIGATION</h3>
+            <li class="nav-link"><a href="{% url 'home' %}"> Home</a></li>
+            <li class="nav-link"><a href="{% url 'cv:index'%}">Portfolio</a> </li>
+            <li class="nav-link"><a href="{% url 'blog:index'%}">Blog</a> </li>
+            <li class="nav-link"><a href="{% url 'contact'%}">Contact</a></li>
+        </div>
+        <div class="contact">
+            <h3>CONCTACT INFO</h3>
+            <P>
+                <img src="{% static 'images/footer/phone_icon.png' %}" alt="#">
+                My Contact Service 680375123
+
+            </P>
+            <p>
+                <img src="{% static 'images/footer/location.png' %}" alt="#">
+                Email: hermanmotcheyo@gmail.com
+            </p>
+        </div>
+    </div>
+    <div>
+            <hr>
+        <p class="text-center copyright"> &copy; Copyright: {% now 'Y' %} &middot; Tcheneghon Motcheyo herman &middot; All rigth reserved! </p>
+    </div>
+
+</div>

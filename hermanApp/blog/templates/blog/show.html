@@ -1,0 +1,34 @@
+
+{% extends 'layouts/base.html' %}
+{% block title %} detail article{% endblock  %}
+ {% include 'layouts/_navbar.html' %}
+
+   {% block content %}
+<article>
+{{article.title}}
+{{article.author}}
+<h1>{{art.title}}</h1>
+  <span> Publié il y a {{ article.created_at}} par {{article.author}}</span>   
+ <p>{{article.content }}</p>
+ 
+ {% for com in comment  %}
+ <h1>      {{com.author}}
+ {{com.content}}</h1>
+
+    
+
+ {% endfor %}
+ 
+ 
+
+  <form action='' method='POST'>{% csrf_token %}
+   {{form}}  
+    <input type='submit' value='Save' />
+</form>
+
+</article>
+
+    {% endblock  %}
+
+{% block footer %} {% include 'layouts/_footer.html'  %}  {% endblock  %}
+

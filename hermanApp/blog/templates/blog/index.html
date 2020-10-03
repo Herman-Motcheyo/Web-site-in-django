@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Blog herman{% endblock  %}
+{% include 'layouts/_navbar.html' %}
+
+{% block content  %}
+
+<p><a href="{% url 'blog:add_article' %}">Publier un article</a></p>
+<article>
+  {% for art in article %}
+  <h1>{{art.title}}</h1>
+  <span> Publié il y a {{ art.created_at}} par {{art.author}}</span>
+  <p>{{art.content |truncatechars:100}}</p>
+  <button><a href="{%url 'blog:show_article' art.id %}"> Lire la suite </a></button>
+
+  {% endfor %}
+</article>
+
+{% endblock  %}
+
+{% block footer %} {% include 'layouts/_footer.html'  %} {% endblock  %}

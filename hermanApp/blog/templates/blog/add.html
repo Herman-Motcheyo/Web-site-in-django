@@ -1,0 +1,19 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Publier {% endblock  %}
+{% include 'layouts/_navbar.html' %}
+
+
+{% block content %}
+<h1>add</h1>
+<form action='.' method='POST'>{% csrf_token %}
+  {{form}}
+  <input type='submit' value='Save' />
+</form>
+<button type="submit">Save</button>
+
+{% endblock  %}
+
+{% block footer %}
+{% include 'layouts/_footer.html'  %}
+{% endblock footer %}
