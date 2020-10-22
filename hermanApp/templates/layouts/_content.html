@@ -1,93 +1,90 @@
 {% load static %}
 <div class="carousel">
-<div id="slider">
-  <input type="radio" id="show_slide1" name="slider_commands">
-  <input type="radio" id="show_slide2" name="slider_commands">
-  <input type="radio" id="show_slide3" name="slider_commands">
-  <input type="radio" id="play_slider" name="slider_commands">
+  <div id="slider">
+    <input type="radio" id="show_slide1" name="slider_commands" />
+    <input type="radio" id="show_slide2" name="slider_commands" />
+    <input type="radio" id="show_slide3" name="slider_commands" />
+    <input type="radio" id="play_slider" name="slider_commands" />
 
-  <div id="slides">
-    <figure id="slide1">
-      <img src="{% static 'images/home/s1.jpg' %} " alt="programmer">
-      <figcaption>Programmer est ma Passion</figcaption>
-    </figure>
-    <figure id="slide2">
-      <img src="{% static 'images/home/s2.jpg' %}" alt="maths">
-      <figcaption>La Mathematique est mon plus beau songe</figcaption>
-    </figure>
-    <figure id="slide3">
-      <img src="{% static 'images/home/s3.jpg' %} " alt="machine">
-      <figcaption>Tout pour le machine learning</figcaption>
-    </figure>
+    <div id="slides">
+      <figure id="slide1">
+        <img src="{% static 'images/home/s1.jpg' %} " alt="programmer" />
+        <figcaption>Programmer est ma Passion</figcaption>
+      </figure>
+      <figure id="slide2">
+        <img src="{% static 'images/home/s2.jpg' %}" alt="maths" />
+        <figcaption>La Mathematique est mon plus beau songe</figcaption>
+      </figure>
+      <figure id="slide3">
+        <img src="{% static 'images/home/s3.jpg' %} " alt="machine" />
+        <figcaption>Tout pour le machine learning</figcaption>
+      </figure>
+    </div>
+    <nav>
+      <ul class="dots_commands">
+        <li><label for="show_slide1">Slide 1</label></li>
+        <li><label for="show_slide2">Slide 2</label></li>
+        <li><label for="show_slide3">Slide 3</label></li>
+      </ul>
+      <label for="play_slider" aria-label="Play" id="play" title="Play"
+        >Play</label
+      >
+    </nav>
   </div>
-  <nav>
-    <ul class="dots_commands">
-      <li><label for="show_slide1">Slide 1</label></li>
-      <li><label for="show_slide2">Slide 2</label></li>
-      <li><label for="show_slide3">Slide 3</label></li>
-    </ul>
-    <label for="play_slider" aria-label="Play" id="play" title="Play">Play</label>
-  </nav>
 </div>
-  </div>
 <div class="card-description">
   <div class="container">
     <div class="description">
-      <p class="about"> About Herman</p>
+      <p class="about">About Me</p>
       <h1>I Build some Application</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro voluptate non ipsum repudiandae
-        cumque deserunt similique dolorum tempora quod eveniet, odio amet. Rerum nihil eaque reiciendis
-        odit cupiditate laborum voluptas.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro voluptate non ipsum repudiandae
-        cumque deserunt similique dolorum tempora quod eveniet, odio amet. Rerum nihil eaque reiciendis
-        odit cupiditate laborum voluptas
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro voluptate non ipsum repudiandae
-        cumque deserunt similique dolorum tempora quod eveniet, odio amet. Rerum nihil eaque reiciendis
-        odit cupiditate laborum voluptas</p>
-
+      <p>
+        Hello,My name is Herman Tcheneghon . I am a Devolper and also a Designer.If
+        you have as any Project or if you want make a software for your buissnes
+        contact me.I make as soon as possible.You really like my work,if you
+        don’t i change this until you like I give you saticfaction result. I am
+        a Devolper and also a Designer.If you have as any Project or if you want
+        make a software for your bussniess contact me.I make your project as
+        soon as possible
+      </p>
     </div>
     <div class="profil">
-      <img src="{% static 'images/s2.jpg' %}" alt="">
+      <img src="{% static 'images/s2.jpg' %}" alt="" />
     </div>
   </div>
 </div>
 <section class="service">
   <div class="container-img">
     <h1>OUR SERVICES</h1>
-    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta impedit ea neque accusantium
-      soluta </p>
+    <p class="text-center">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta impedit ea
+      neque accusantium soluta
+    </p>
     <div class="service-img">
       <div class="lg">
-        <img src="{% static 'images/home/service/s3.jpg' %}" alt="#">
+        <img src="{% static 'images/home/service/s3.jpg' %}" alt="#" />
         <legend class="blog_head">Work Status</legend>
       </div>
       <div class="lg">
-        <img src="{% static 'images/home/service/s4.jpg' %}" alt="#">
+        <img src="{% static 'images/home/service/s4.jpg' %}" alt="#" />
         <legend class="blog_head">Work Status</legend>
-
       </div>
       <div class="lg">
-        <img src="{% static 'images/home/service/s5.jpg' %}" alt="#">
+        <img src="{% static 'images/home/service/s5.jpg' %}" alt="#" />
         <legend class="blog_head">Work Status</legend>
-
       </div>
       <div class="lg">
-        <img src="{% static 'images/home/service/blog1.jpg' %}" alt="#">
+        <img src="{% static 'images/home/service/blog1.jpg' %}" alt="#" />
         <legend class="blog_head">Work Status</legend>
-
       </div>
       <div class="lg">
-        <img src="{% static 'images/home/service/blog2.jpg' %}" alt="#">
+        <img src="{% static 'images/home/service/blog2.jpg' %}" alt="#" />
         <legend class="blog_head">Work Status</legend>
-
       </div>
       <div class="lg">
-        <img src="{% static 'images/home/service/blog3.jpg' %}" alt="#">
+        <img src="{% static 'images/home/service/blog3.jpg' %}" alt="#" />
         <legend class="blog_head">Work Status</legend>
-
       </div>
     </div>
   </div>
 </section>
-<script src="{% static 'js/bootstrap.min.js' %}">
-</script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>

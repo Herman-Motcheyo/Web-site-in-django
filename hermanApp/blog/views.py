@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 from django import forms
+from django.core.paginator import Paginator
+from django.views.generic import ListView
 from .models import(
          Article,
          Comment,
@@ -10,10 +12,23 @@ from .form import (
     CommentForm
 )
 
+class blogListView(ListView):
+    model = Article
+    paginate_by = 3
+
 
 def index(request):
     article = Article.objects.all()
-    return render(request,'blog/index.html',{'article':article})
+    category = Category.objects.all()
+    paginator = Paginator(article , 3)
+    page_number = request.GET.get('page')
+    page_object = paginator.get_page(page_number)
+    context = {
+       'article':article,
+        'category': category,
+        'page_obj' : page_object,
+    }
+    return render(request,'blog/index.html',context)
 
 def create_article(request):
     form = ArticleForm(request.POST or None)
@@ -30,7 +45,7 @@ def show_article(request,id, **kwargs):
     comment = CommentForm(request.POST or None)
     if comment.is_valid():
         comment.save()
-        return redirect('show_article',pk=id )
+     #   return redirect('show_article',pk=id )
     
     comments = Comment.objects.filter(article=article)
     context  = {

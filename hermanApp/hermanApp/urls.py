@@ -21,6 +21,6 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('cv/',include('cv.urls')),
     path('blog/',include('blog.urls')),
-    path('contact/', views.contact, name="contact"),
+    path('contact_me/',include('contact.urls')),
     path('admin/', admin.site.urls),
 ]

@@ -1,7 +1,7 @@
 
 
 /* section  card*/
-.card{
+/*.card{
   width: 400px;
   margin: 0px auto;
   background-color: white;
@@ -21,8 +21,6 @@
     overflow: hidden;
 }
 .card-image img{
-    width: 150%;
-    height: 150%gi;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -50,4 +48,43 @@
 }
 .card-date , .card-excerpt{
     color: #777;
+}*/
+
+.presentation{
+    background-color: red;
+    height: 250%;
+    width: 250%;
+}
+.portfolio {
+    justify-content: center;
+    flex-wrap:  wrap;
+}
+.portfolio img{
+    height: 20px;
+    width: 20px;
+}
+.card{
+    box-shadow: 6px 6px 6px 6px #cccccc;
+    margin: 20px;
+
+}
+.card .language {
+    text-decoration: underline;
+}
+.card:hover{
+box-shadow: 6px 6px 6px 6px #0c2326;
+transition: all 0.4s ease 0s;
+}
+
+.about-container {
+  width: 80%;
+  height: 330px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  margin: -7% auto 20px auto;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
 }

@@ -1,0 +1,66 @@
+
+.banner {
+    margin: 40px 10% 0 10%;
+}
+.banner .container-img{
+  text-align: center;
+}
+.banner .container-img img{
+    height: 60%;
+    width: 80%;
+}
+
+
+.post{
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+}
+.banner .post .detail-post, .text-post{
+    margin: 15px 0px;
+}
+.title{
+    margin-left: 30px;
+}
+.banner .post .detail-post{
+    margin-top: 40px;
+    width: 250px;
+    float: left;
+    
+}
+
+/* section comment*/
+
+.comments .first-comment h4{
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0c4d44;
+    width: 30%;
+    line-height: 40px;
+    position: relative;
+    left: 36%;
+   
+    
+}
+.comments .comment{
+    margin-top: 10px;
+    margin-left: 10% ;
+    margin-right: 10%;
+    box-shadow: 5px 5px 5px 5px #ddd;
+   
+}
+.comment .com-author h3{
+  margin-left: 10%;
+}
+.comment .com-author .com-content{
+    margin-left: 20%;
+}
+.cmt{
+ text-align: center;
+ font-size: 25px;
+ padding: 5px;
+}
+.com p {
+ font-weight: bold;
+}

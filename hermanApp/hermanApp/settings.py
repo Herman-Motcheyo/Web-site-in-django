@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'cv',
     'blog',
+    'contact'
 ]
 
 MIDDLEWARE = [

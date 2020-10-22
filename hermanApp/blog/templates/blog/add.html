@@ -5,12 +5,19 @@
 
 
 {% block content %}
-<h1>add</h1>
-<form action='.' method='POST'>{% csrf_token %}
-  {{form}}
-  <input type='submit' value='Save' />
-</form>
-<button type="submit">Save</button>
+
+<div class="addp-img">
+<div class="addp-container">
+  <h1>add publication</h1>
+  <form action='.' method='POST'>
+    {% csrf_token %}
+    {{form}}
+    <input type='submit' value='Save' />
+  </form>
+</div>
+</div>
+
+
 
 {% endblock  %}
 

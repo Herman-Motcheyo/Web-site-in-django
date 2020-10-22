@@ -1,34 +1,63 @@
-
 {% extends 'layouts/base.html' %}
+{%  load static %}
 {% block title %} detail article{% endblock  %}
- {% include 'layouts/_navbar.html' %}
+{% include 'layouts/_navbar.html' %}
 
-   {% block content %}
-<article>
-{{article.title}}
-{{article.author}}
-<h1>{{art.title}}</h1>
-  <span> Publié il y a {{ article.created_at}} par {{article.author}}</span>   
- <p>{{article.content }}</p>
- 
- {% for com in comment  %}
- <h1>      {{com.author}}
- {{com.content}}</h1>
-
-    
-
- {% endfor %}
- 
- 
-
-  <form action='' method='POST'>{% csrf_token %}
-   {{form}}  
+{% block content %}
+<div class="banner">
+  <div class="container">
+    <div class="container-img">
+      <img src="{% static article.image %}">
+    </div>
+    <div class="post">
+      <div class="detail-post">
+        Par: <strong> <em>{{article.author}} </em></strong>
+        <p> le {{ article.created_at}}
+        </p>
+      </div>
+      <div class="text-post">
+        <h2 class="title">{{article.title}}</h2>
+        <div class="text">
+          <p>{{article.content}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="comments">
+  <div class="com">
+    <p> <strong class="cmt">Commentaire :</strong> Au total {{comment|length}} commentaire (s)</p>
+  </div>
+  {% for com in comment  %}
+  <div class="comment">
+    <div class="com-author">
+      <h3> {{com.author}} </h3>
+      <div class="com-content">
+        <p style="padding: 10px;"> {{com.content}}</p>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <div class="first-comment">
+    <h4> Soyez le Premier à laisser un commentaire !</h4>
+  </div>
+  {% endfor %}
+  <div class="first-comment">
+    <h4> Postez un commentaire !</h4>
+  
+<div class="addp-img">
+<div class="addp-container">
+  <form action='.' method='POST'>
+    {% csrf_token %}
+    {{form}}
     <input type='submit' value='Save' />
-</form>
+  </form>
+</div>
+</div>
+  </div>
 
-</article>
+</section>
 
-    {% endblock  %}
+{% endblock  %}
 
-{% block footer %} {% include 'layouts/_footer.html'  %}  {% endblock  %}
-
+{% block footer %} {% include 'layouts/_footer.html'  %} {% endblock  %}

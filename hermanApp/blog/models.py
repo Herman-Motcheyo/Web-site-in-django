@@ -19,7 +19,7 @@ class Category(models.Model):
 class Article(TimespamtedModel):
     title= models.CharField( max_length=250)
     content = models.TextField()
-    image= models.CharField(  max_length=250)
+    image= models.ImageField(upload_to='blog/images')
     author = models.CharField( max_length=100)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)  
     

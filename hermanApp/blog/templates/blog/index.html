@@ -1,21 +1,86 @@
 {% extends 'layouts/base.html' %}
+{% load static %}
 
 {% block title %} Blog herman{% endblock  %}
+
 {% include 'layouts/_navbar.html' %}
 
 {% block content  %}
+<a href="{% url 'blog:add_article' %}">tzeztzzzzzzzz</a>
+<div class="blog">
+  <div class="post-article">
+    {% for art in article %}
+    <div class="post">
+      <div class="post-content">
+        <div class="content-desc">
+          <div class="cat-lef">
+            <p> Dans la categorie : <span> <em>{{art.category}} </em></span> </p>
+          </div>
+          <div class="art">
+            <div class="art-author">
+              <h4>{{ art.author}}</h4>
+              <h4> {{art.created_at}}</h4>
+            </div>
+            <div class="icon-lef">
+              <div class="icon"><img src="{% static 'blog/images/icon/icons8_user_50px.png' %}" alt="#"></div>
+              <div class="icon"> <img src="{% static 'blog/images/icon/icons8_Bill_50px_2.png' %}" alt="#"> </div>
+            </div>
 
-<p><a href="{% url 'blog:add_article' %}">Publier un article</a></p>
-<article>
-  {% for art in article %}
-  <h1>{{art.title}}</h1>
-  <span> Publié il y a {{ art.created_at}} par {{art.author}}</span>
-  <p>{{art.content |truncatechars:100}}</p>
-  <button><a href="{%url 'blog:show_article' art.id %}"> Lire la suite </a></button>
+          </div>
+        </div>
+      </div>
+      <div class="post-detail">
+        <div class="post-item">
+          <img src="{%  static art.image  %}" style="width:100% ;" alt="#">
+          <h2><a href="{%url 'blog:show_article' art.id %}"> {{art.title}}</a></h2>
+          <div class="art-text">
+            <div class="art-p">
+              <p>{{art.content |truncatechars:200}}</p>
+            </div>
+            <button><a href="{%url 'blog:show_article' art.id %}"> Lire la suite </a></button>
+          </div>
+        </div>
+      </div>
 
-  {% endfor %}
-</article>
-
+    </div>
+    {% endfor %}
+  </div>
+  <div class="post-cat">
+    <div class="head-post-cat">
+        <h3>Post Catgories</h3>
+    </div>
+    {% for cat in category %}
+    <div class="info-cat">
+      <div class="name-cat">
+        <div class="name">
+          <h4>{{cat.name}}</h4>
+        </div>
+        <div class="cat-number">
+          <p>6</p>
+        </div>
+      </div>
+    </div>
+      {% endfor %}
+  </div>
+</div>
+  <div class="pagination">
+    <span class="step-links">
+      {% if page_obj.has_previous %}
+      <a href="?page=1">&laquo; first</a>
+      <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+      {% endif %}
+  
+      <span class="current">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+      </span>
+  
+      {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}">next</a>
+      <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+      {% endif %}
+    </span>
+  </div>
+  
+  </div>
 {% endblock  %}
-
 {% block footer %} {% include 'layouts/_footer.html'  %} {% endblock  %}
