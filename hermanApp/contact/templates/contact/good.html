@@ -1,0 +1,63 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Good Submition {% endblock  %}
+{% include 'layouts/_navbar.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="contain">
+        <h2>Merci je vous Contacterez le plus tot possible !</h2>
+       <button><a href="{% url 'blog:index' %}"> Revenir sur mon Blog</a></button>
+    </div>
+</div>
+<style>
+    .container{
+        height: 500px;
+        width: 500px;
+        margin: 25px 25px 25px 28%;
+        text-align: center;
+    }
+    .container .contain{
+        padding: 13px;
+    }
+    .container .contain h2{
+        position: relative;
+        top:0.8em;
+        font-size: 55px;
+    }
+     .container .contain button {
+         position: relative;
+         top: 30px;
+         background-color: #0c2326;
+         border-color: #cccccc;
+         border-bottom: #cccccc;
+         border-right: #cccccc;
+         width: 100%;
+         height: 60px;
+     }
+     .container .contain button:hover{
+         background-color: #cccccc;
+        transition: all 1s;
+     }
+
+     .container .contain button a {
+       text-decoration: none;
+       color: #ffffff;
+       font-size: 30px;
+     }
+      .container .contain button a:hover{
+           color: rgb(61, 61, 97);
+
+      }
+   
+ @media only screen and (min-width: 641px) {
+} 
+    
+</style>
+{% endblock  %}
+
+{% block footer %}
+{% include 'layouts/_footer.html'  %}
+{% endblock footer %}

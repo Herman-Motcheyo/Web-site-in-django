@@ -45,7 +45,7 @@ def show_article(request,id, **kwargs):
     comment = CommentForm(request.POST or None)
     if comment.is_valid():
         comment.save()
-     #   return redirect('show_article',pk=id )
+        return redirect('show_article',pk=id )
     
     comments = Comment.objects.filter(article=article)
     context  = {

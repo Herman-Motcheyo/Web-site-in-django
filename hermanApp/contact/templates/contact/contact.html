@@ -5,6 +5,21 @@
  {% include 'layouts/_navbar.html' %}
 
   {% block content %}
-    <h1>contact hujtuiyiturituiu</h1>
+  <div class="addp-img">
+<div class="addp-container">
+  <h1>Contact Me!</h1>
+  <form action='.' method='POST'>
+    {% csrf_token %}
+    {{form}}
+    <input type='submit' value='Save' />
+  </form>
+</div>
+</div>
+<style>
+  .errorlist{
+    visibility: hidden;
+  }
+</style>
+
   {% endblock  %}
 {% block footer %} {% include 'layouts/_footer.html'  %}  {% endblock  %}

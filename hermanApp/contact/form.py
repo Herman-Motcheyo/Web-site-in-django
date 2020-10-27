@@ -4,11 +4,11 @@ from django import forms
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fiels = ['name','email','message','suject']
+        fields = ['name','suject','email','message']
         widgets = { 
-        #  'author': forms.TextInput(attrs = {'class' : 'add-author' ,'placeholder' : '   Author of article  '}),
-      #    'title': forms.TextInput(attrs = {'class' : 'add-title' , 'placeholder' : '   Title of article  '}),
-      #    'content': forms.Textarea(attrs = { 'class' : 'add-content' ,'placeholder' : ' Tape content of article '}),
+          'name': forms.TextInput(attrs = {'class' : 'add-author' ,'placeholder' : '   Your name  '}),
+          'suject': forms.TextInput(attrs = {'class' : 'add-title' , 'placeholder' : '   Subject  '}),
+         'message': forms.Textarea(attrs = { 'class' : 'add-content' ,'placeholder' : ' Tape content here'}),
         }
   
 
